@@ -38,9 +38,16 @@
         android:layout_height="wrap_content"
         android:onClick="onClickRetrieveContact"/>
 
+    <Button
+        android:id="@+id/Button_DeleteAll"
+        android:text="@string/Delete"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickDeleteContacts"/>
+
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView_Retrieve" />
+        android:id="@+id/listView_Retrieve"/>
 
 </LinearLayout>

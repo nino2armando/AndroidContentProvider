@@ -45,10 +45,17 @@ public class MainActivity extends ActionBarActivity {
         Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
     }
 
+    public void onClickDeleteContacts(View view){
+         int id = getContentResolver().delete(ContactProvider.CONTENT_URI, null, null);
+            //todo: we have to see if the list is full...if yes clear
+        
+    }
+
     public void onClickRetrieveContact(View view){
         String URL = "content://com.example.provider.ContactBook/contacts";
         Uri contacts = Uri.parse(URL);
         Cursor c = managedQuery(contacts, null, null, null, "name");
+
         ListView listView = (ListView) findViewById(R.id.listView_Retrieve);
         List<String> data = new ArrayList<String>();
 

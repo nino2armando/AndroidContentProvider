@@ -129,7 +129,7 @@ public class ContactProvider extends ContentProvider {
             case CONTACTS:
                 return "vnd.android.cursor.dir/vnd.example.contacts";
             case CONTACT_ID:
-                return "vnd.android.cursor.item/vnd.example.students";
+                return "vnd.android.cursor.item/vnd.example.contacts";
             default:
                 throw new IllegalArgumentException("Unsupported URI" + uri);
         }

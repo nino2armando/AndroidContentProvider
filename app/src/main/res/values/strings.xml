@@ -8,5 +8,6 @@
     <string name="Number">Number</string>
     <string name="Add">Add</string>
     <string name="Retrive">Retrieve</string>
+    <string name="Delete">Delete All</string>
 
 </resources>
