@@ -34,13 +34,19 @@ public class MainActivity extends ActionBarActivity {
         // add a new Contact record
         ContentValues values = new ContentValues();
 
-        String name = ((EditText) findViewById(R.id.EditText_Name)).getText().toString();
-        String number = ((EditText) findViewById(R.id.EditText_Number)).getText().toString();
+        EditText nameView = (EditText) findViewById(R.id.EditText_Name);
+        EditText numberView = (EditText) findViewById(R.id.EditText_Number);
+
+        String name = nameView.getText().toString();
+        String number = numberView.getText().toString();
 
         values.put(ContactProvider.NAME, name);
         values.put(ContactProvider.NUMBER, number);
 
         Uri uri = getContentResolver().insert(ContactProvider.CONTENT_URI, values);
+
+        nameView.setText("");
+        numberView.setText("");
 
         Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
     }
@@ -48,7 +54,8 @@ public class MainActivity extends ActionBarActivity {
     public void onClickDeleteContacts(View view){
          int id = getContentResolver().delete(ContactProvider.CONTENT_URI, null, null);
             //todo: we have to see if the list is full...if yes clear
-        
+         ListView listView = (ListView) findViewById(R.id.listView_Retrieve);
+         listView.setAdapter(null);
     }
 
     public void onClickRetrieveContact(View view){
